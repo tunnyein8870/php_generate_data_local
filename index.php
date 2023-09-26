@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -10,33 +11,21 @@
     <h2>Generate Fake Data</h2>
     <h5>Instruction:</h5>
     <div>
-        <div class="d-flex">
-            <!-- <div>
-                <label><b>Install Composer</b></label>
-                <a class="btn btn-outline-dark me-5" href="install/install_comp.php">Install</a>
-                <?php #if (isset($_GET['comp_success'])) { ?>
-                    <span class="text-danger d-block">Composer Installed Success.</span>
-                <?php #} ?>
-            </div>
-            <div>
-                <label class=""><b>Install Faker</b></label>
-                <a class="btn btn-outline-dark" href="install/install_faker.php">Install</a>
-                <?php #if (isset($_GET['faker_success'])) { ?>
-                    <span class="text-danger d-block">Faker Installed Success.</span>
-                <?php #} ?>
-            </div> -->
-        </div>
         <div>
+            <?php $hostfile = __DIR__ . "/db_handle/host_db.php" ?>
+            <!-- <form action="db_handle/host_db.php" method="POST"> -->
             <form action="db_handle/host_db.php" method="POST">
                 <div class="d-block">
                     <label class="mt-2" for="db">Enter Details</label>
-                    <input type="text" class="d-block ms-3 my-2" name="host" value="" placeholder="Public IP (e.g. 127.0.0.1)" required>
+                    <input type="text" class="d-block ms-3 my-2" name="host" value=""
+                        placeholder="Public IP (e.g. 127.0.0.1)" required>
                     <p class="d-flex ms-3"><a href="https://www.whatismyip.com/">Check IP >></a></p>
                     <label class="mt-2" for="db">Enter Database Name</label>
                     <input type="text" class="d-block ms-3 my-2" name="db" value="" placeholder="Database (mysql)"
                         required>
                 </div>
-                <input type="text" class="d-block ms-3 my-2" name="user" value="" placeholder="Username (root)" required>
+                <input type="text" class="d-block ms-3 my-2" name="user" value="" placeholder="Username (root)"
+                    required>
                 <input type="text" class="d-block ms-3 my-2" name="pass" value="" placeholder="Password">
                 <div class="d-flex">
                     <label class="" for="db">Enter Table Name</label>

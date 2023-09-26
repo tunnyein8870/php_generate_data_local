@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<div class="container navbar d-block">
+    <h2>Generate Fake Data</h2>
+    <h5>Instruction:</h5>
+    <div>
+        <div class="d-flex">
+            <div>
+                <label><b>Install Composer</b></label>
+                <a class="btn btn-outline-dark me-5" href="install/install_comp.php">Install</a>
+                <?php if (isset($_GET['comp_success'])) { ?>
+                    <span class="text-danger d-block">Composer Installed Success.</span>
+                <?php } ?>
+            </div>
+            <div>
+                <label class=""><b>Install Faker</b></label>
+                <a class="btn btn-outline-dark" href="install/install_faker.php">Install</a>
+                <?php if (isset($_GET['faker_success'])) { ?>
+                    <span class="text-danger d-block">Faker Installed Success.</span>
+                <?php } ?>
+            </div>
+        </div>
+        <div>
+            <label class="my-2">Create db and table</label>
+            <form action="db_handle/host_db.php" method="POST">
+                <div class="d-flex">
+                    <label class="mt-2" for="db">Enter Database Name</label>
+                    <input type="text" class="d-block ms-3 my-2" name="db" value="" placeholder="Database Name" required>
+                </div>
+                <div class="d-flex">
+                    <label class="" for="db">Enter Table Name</label>
+                    <input type="text" class="d-block ms-5 mb-2" name="table" placeholder="Table Name" required>
+                </div>
+                <label class="me-5">Enter Number of columns.</label>
+                <input type="number" class="d-inline-flex ms-5" oninput="addInputFields()" name="count" min="1" max="15">
+                <br><br>
+                <div>
+                    <h5>Availabe Fields</h5>
+                    <div>
+                        <span>name, </span>
+                        <span>firstName,</span>
+                        <span>lastName,</span>
+                        <span>age,</span>
+                        <span>gender,</span>
+                        <span>city</span>
+                        <span>email/mail,</span>
+                        <span>password/pass,</span>
+                        <span>phone/ph,</span>
+                        <span>address,</span>
+                    </div>
+                    <div>
+                        <span>startdate,</span>
+                        <span>enddate,</span>
+                        <span>quantity/qty,</span>
+                        <span>number/num,</span>
+                        <span>price,</span>
+                        <span>bankacc,</span>
+                        <span>company,</span>
+                        <span>city,</span>
+                        <span>description/des,</span>
+                        <span>state,</span>
+                        <span>country</span>
+                    </div>
+                    <div id="inputFields" class="mt-3"></div>
+                    <label class="mt-3 me-5">Enter Number of records.</label>
+                    <input type="number" class="ms-5" name="times" min="1" max="100">
+                    <input type="submit" class="d-block mt-2">
+            </form>
+            <?php if (isset($_GET['table_success'])) { ?>
+                <span class="text-danger d-inline-flex">Table Created.</span>
+            <?php } ?>
+        </div>
+    </div>
+    <script src="js/dynamic_form.js"></script>
+</div>
+
+</html>

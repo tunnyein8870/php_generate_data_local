@@ -10,6 +10,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
     $user = isset($_POST['user']) ? $_POST['user'] : null;
     $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
     $success = true;
+    echo "<script>alert($host, '$user', '$pass')</script>";
 } else {
     // Handle cases where there is no POST request.
     // You can display an error message or perform other actions here.
@@ -40,6 +41,9 @@ if ($success) {
         $pdo->exec($sql);
         $pdo->exec("USE $db");
 
+        $grantdb = "GRANT ALL PRIVILEGES ON $db.* TO '$user'@'%' IDENTIFIED BY '$pass';";
+        $pdo->exec($grantdb);
+        
         operateTable($pdo, $table, $count, tableExists($pdo, $table));
         dataInsert($pdo, $table, $count, $times);
         // header('Location:../index.php?table_success');

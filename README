@@ -4,8 +4,8 @@
 # Tested using Xampp version 8.2.4
 
 /* Requirements */
-[-- 1. Xampp -- ]
-[-- 2. Internet to Install Composer & Faker]
+[-- 1. Xampp --] >> Download >> 
+[-- 2. Composer --] Download >> https://getcomposer.org/download/
 
 /* Instruction */
 # Install Xampp.
@@ -14,20 +14,11 @@
 # Copy project folder to C:/xampp/htdocs
 # Type localhost://index.php or localhost:port_num//index.php
 
+/** OR **/
+# Install third party extensions like 'PHP SERVER' or 'Live SERVER' in vscode.
+# Open index.php and 'Run or Serve' project.
 !!! Make sure both Apache and MySQL run without unexpected shutdown.
-/** During installing Composer or Faker, if loading time is taking longer time, 
-delete vendor folder, composer.json and composer.lock and composer.phar 
-then reinstall composer and faker. */
 
-/* For Host Only */
-# Locate php.ini and search for bind-address then set it to your ip.
-# To find out your ip on your local PC, type ipconfig and find IPv4.
-# E.g. [-- bind-address="192.168.60.94" --]
-# Make sql to grant all privileges for remote access.
-# Change $host="127.0.0.1"  to $host="public_ip", check https://www.whatismyip.com/ 
-
-[-- GRANT ALL PRIVILEGES ON your_db.* TO 'your_username'@'%' IDENTIFIED BY 'your_pass';
-FLUSH PRIVILEGES; --]
 
 
 

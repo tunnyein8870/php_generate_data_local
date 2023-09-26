@@ -4,16 +4,14 @@ ini_set('display_errors', 1);
 
 require_once(__DIR__ . "/generate_data.php");
 require_once(__DIR__ . "/../install/vendor/autoload.php");
-$success = true;
-if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+$success = false;
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $host = isset($_POST['host']) ? $_POST['host'] : null;
     $user = isset($_POST['user']) ? $_POST['user'] : null;
     $pass = isset($_POST['pass']) ? $_POST['pass'] : null;
-    $success = true;
     echo "<script>alert($host, '$user', '$pass')</script>";
+    $success = true;
 } else {
-    // Handle cases where there is no POST request.
-    // You can display an error message or perform other actions here.
     echo "No POST request received.";
     $success = false;
 }
@@ -32,7 +30,6 @@ if ($success) {
         $count = $_POST['count'];
         $times = $_POST['times'];
 
-
         if (!dbExists($pdo, $db)) {
             $sql = "DROP DATABASE $db";
             $pdo->exec($sql);
@@ -43,11 +40,11 @@ if ($success) {
 
         $grantdb = "GRANT ALL PRIVILEGES ON $db.* TO '$user'@'%' IDENTIFIED BY '$pass';";
         $pdo->exec($grantdb);
-        
+
         operateTable($pdo, $table, $count, tableExists($pdo, $table));
         dataInsert($pdo, $table, $count, $times);
-        // header('Location:../index.php?table_success');
         echo "<script>alert('Table $table created.')</script>";
+        header('Location:../index.php?table_success');
     } else {
         header('Location:../index.php?table_failed');
         echo 'failed';

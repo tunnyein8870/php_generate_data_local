@@ -12,7 +12,7 @@
     <h5>Instruction:</h5>
     <div>
         <div>
-            <?php $hostfile = __DIR__ . "/db_handle/host_db.php" ?>
+                <?php echo $dir = __DIR__ . "/db_handle/host_db.php" ?>
             <!-- <form action="db_handle/host_db.php" method="POST"> -->
             <form action="db_handle/host_db.php" method="POST">
                 <div class="d-block">

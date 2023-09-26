@@ -88,8 +88,6 @@ function dataInsert($pdo, $table, $count, $times)
             // Data exists like data [] = $faker->number, $faker->quantity, etc.
         }
 
-        print_r($data);
-
         // Build the SQL query with placeholders
         $sql = "INSERT INTO $table (";
         $sql .= implode(', ', $columns); // Dynamic column names

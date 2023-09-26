@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -12,20 +11,20 @@
     <h5>Instruction:</h5>
     <div>
         <div class="d-flex">
-            <div>
+            <!-- <div>
                 <label><b>Install Composer</b></label>
                 <a class="btn btn-outline-dark me-5" href="install/install_comp.php">Install</a>
-                <?php if (isset($_GET['comp_success'])) { ?>
+                <?php #if (isset($_GET['comp_success'])) { ?>
                     <span class="text-danger d-block">Composer Installed Success.</span>
-                <?php } ?>
+                <?php #} ?>
             </div>
             <div>
                 <label class=""><b>Install Faker</b></label>
                 <a class="btn btn-outline-dark" href="install/install_faker.php">Install</a>
-                <?php if (isset($_GET['faker_success'])) { ?>
+                <?php #if (isset($_GET['faker_success'])) { ?>
                     <span class="text-danger d-block">Faker Installed Success.</span>
-                <?php } ?>
-            </div>
+                <?php #} ?>
+            </div> -->
         </div>
         <div>
             <form action="db_handle/host_db.php" method="POST">

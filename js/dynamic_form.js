@@ -44,7 +44,7 @@ function addInputFields() {
         else if (inputField.value.toLowerCase().includes("des")) {
           inputField.value = "description";
         }
-        else{
+        else {
           // change for valid values of keywords only
           inputField.value = inputField.value.toLowerCase();
         }
@@ -69,7 +69,7 @@ function checkKeywords(keyword) {
     "password",
     "pass",
     "phone",
-    "ph",
+    "ph", "phoneno",
     "address",
     "startdate",
     "enddate",

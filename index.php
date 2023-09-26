@@ -45,7 +45,7 @@
                         <span>city</span>
                         <span>email/mail,</span>
                         <span>password/pass,</span>
-                        <span>phone/ph,</span>
+                        <span>phone/phoneno/ph,</span>
                         <span>address,</span>
                     </div>
                     <div>

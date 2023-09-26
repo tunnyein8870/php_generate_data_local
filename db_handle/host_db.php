@@ -3,23 +3,17 @@ require_once("../pdo/connection.php");
 require_once('generate_data.php');
 require '../install/vendor/autoload.php';
 
-try {
-   
-} catch (Exception $e) {
-    echo 'Install Composer and Faker first.' . $e->getMessage();
-}
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $db = $_POST['db'];
     $table = $_POST['table'];
     $count = $_POST['count'];
     $times = $_POST['times'];
-    echo 'number of times' . $times;
+    // echo 'number of times' . $times;
 
     if (!dbExists($pdo, $db)) {
         $sql = "DROP DATABASE $db";
         $pdo->exec($sql);
-        echo "<br>database deleted.<br>";
+        // echo "<br>database deleted.<br>";
     }
     $sql = "CREATE DATABASE $db";
     $pdo->exec($sql);

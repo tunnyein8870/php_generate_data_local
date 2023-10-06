@@ -17,7 +17,7 @@
                 <div class="d-block">
                     <label class="mt-2" for="db">Enter Details</label>
                     <input type="text" class="d-block ms-3 my-2" name="host" value=""
-                        placeholder="Public IP (e.g. 127.0.0.1)" required>
+                        placeholder="HOST IP (e.g. 127.0.0.1)" required>
                     <p class="d-flex ms-3"><a href="https://www.whatismyip.com/">Check IP >></a></p>
                     <label class="mt-2" for="db">Enter Database Name</label>
                     <input type="text" class="d-block ms-3 my-2" name="db" value="" placeholder="Database (mysql)"
